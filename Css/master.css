@@ -1,0 +1,171 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+body{
+    overflow-y: hidden;
+}
+
+/*Style background color for main section */
+.navbar{
+    background-image: url(https://taleek.com/img/bg-layer.svg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-color:black;
+    height:100vh;
+}
+/*End of style section main*/
+
+/*Style Header for nav*/
+.navbar .header{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:15px;
+    width:85%;
+    margin-right:20px;
+}
+.navbar .header .logo img{
+    width:80px;
+}
+.navbar .header .logo p{
+    color:white;
+    margin-left:10px;
+    display: inline-block;
+    position: relative;
+    top:-30px;
+    font-weight: 800;
+    font-size:25px;
+}
+
+.navbar .header .nav ul{
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    list-style: none;
+}
+.navbar .header .nav ul li{
+    margin:10px;
+}
+
+.navbar .header .nav ul li a{
+    text-decoration: none;
+    color:gray;
+}
+.navbar .header .nav ul li #white{
+    color:white;
+}
+.navbar .header .nav ul li a:hover{
+    color:white;
+    transition:0.5s
+}
+.navbar .bars i{
+    font-size:25px;
+    color:white;
+    display:none;
+}
+
+/*End styel nav*/
+
+
+
+/* Start style div content*/
+.content{
+    width:55%;
+    margin:25px auto 0;
+    text-align: center;
+    position: relative;
+}
+.content h1{
+    color:#fff;
+    font-weight: 900;
+    font-size:65px;
+    transition: 1s;
+    animation: example 4s infinite;
+}
+.content #image{
+    position: relative;
+    animation: example2 4s infinite;
+}
+@keyframes example {
+    0%{letter-spacing: 0px;}
+    25% {letter-spacing: 8px;}
+    100%{letter-spacing: 0px;}
+}
+@keyframes example2 {
+    0% {left:0px; top:0px;}
+    25%{left:100px; top:0px;}
+    100%{left:0px; top:0px;}
+}
+
+.content .btn{
+    position:absolute;
+    left:0;
+    top:40%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+}
+.content .btn button{
+    background-color:goldenrod;
+    padding:15px 25px;
+    border-radius: 10px;
+    border: none;
+    outline:none;
+    color:white;
+    font-size:25px;
+    transition: 2s;
+}
+.content .btn img{
+    width:100px;
+    display: block;
+    transition: 2s;
+}
+.content .btn button:hover{
+    transform: scale(0.5,0.5);
+}
+
+
+
+
+/*Style fotter*/
+.footer{
+    position:absolute;
+    top:88%;
+    width:100%;
+    fill: #fff;
+}
+
+/*Responsive*/
+ @media(max-width:768px){
+    .navbar .bars i{
+        display:block;
+    }
+    .navbar .header .nav ul{
+        position:fixed;
+        flex-direction: column;
+        top:72px;
+        right:0;
+        width:120px;
+        min-height:220px;
+        padding: 20px;
+        background-color:rgba(0,0,0,0.1);
+        transform: translateX(100%);
+        transition: 0.5s transform ease-in-out;
+        z-index: 6;
+    }
+    .header .nav ul.active{
+        transform: translateX(0);
+    }
+    .content .btn{
+        position: relative;
+        bottom:0;
+        width:100%;
+        margin-left:20px;
+    }
+    .content .btn button{
+        padding:5px;
+        font-size: 15px;
+        margin-left:-150px;
+    }
+} 
